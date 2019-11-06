@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Stack;
 
+import org.apache.logging.log4j.LogManager;
 import org.apache.lucene.analysis.TokenFilter;
 import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
@@ -11,7 +12,7 @@ import org.apache.lucene.analysis.tokenattributes.PositionIncrementAttribute;
 import org.apache.lucene.analysis.tokenattributes.TypeAttribute;
 import org.apache.lucene.util.AttributeSource;
 import org.apache.logging.log4j.Logger;
-import org.elasticsearch.common.logging.ESLoggerFactory;
+import org.elasticsearch.common.logging.Loggers;
 
 /**
  * @author Tasos Stathopoulos
@@ -26,8 +27,7 @@ public class GreeklishTokenFilter extends TokenFilter {
 	/**
 	 * Elastic Search logger
 	 */
-	 private static final Logger logger = ESLoggerFactory.getLogger(
-			GreeklishConverter.class.getName());
+	 private static final Logger logger = LogManager.getLogger(GreeklishTokenFilter.class.getName());
 	/**
 	 * The type of the generated tokens
 	 */

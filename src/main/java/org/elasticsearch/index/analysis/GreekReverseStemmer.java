@@ -5,8 +5,9 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.elasticsearch.common.logging.ESLoggerFactory;
 
 /**
  * @author Tasos Stathopoulos
@@ -18,8 +19,7 @@ public class GreekReverseStemmer {
 	/**
 	 * Elastic Search logger
 	 */
-	private static final Logger logger = ESLoggerFactory.getLogger(
-			GreeklishConverter.class.getName());
+	private static final Logger logger = LogManager.getLogger(GreekReverseStemmer.class.getName());
 
 	/**
 	 * Constant variable that represent suffixes for pluralization of

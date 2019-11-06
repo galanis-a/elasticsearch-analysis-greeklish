@@ -10,7 +10,7 @@ import java.io.IOException;
 
 import static org.hamcrest.Matchers.instanceOf;
 
-class SimpleSkroutzGreekStemmerAnalysisTest extends ESTestCase {
+public class SimpleSkroutzGreekStemmerAnalysisTest extends ESTestCase {
     public void testSkroutzGreekStemmerAnalysis() throws IOException {
         TestAnalysis analysis = createTestAnalysis(new Index("test", "_na_"),
                 Settings.EMPTY, new GreeklishPlugin());

@@ -7,8 +7,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.elasticsearch.common.logging.ESLoggerFactory;
+import org.elasticsearch.common.logging.Loggers;
 
 /**
  * @author Tasos Stathopoulos
@@ -20,8 +21,7 @@ public class GreeklishGenerator {
 	/**
 	 * Elastic Search logger
 	 */
-	private static final Logger logger = ESLoggerFactory.getLogger(
-			GreeklishConverter.class.getName());
+	private static final Logger logger = LogManager.getLogger(GreeklishGenerator.class.getName());
 
 	/**
 	 * Constant variables that represent the character that substitutes a
@@ -192,7 +192,7 @@ public class GreeklishGenerator {
 		if (perWordGreeklish.isEmpty()) {
 			for (String convertString : convertStrings) {
 				if (perWordGreeklish.size() >= maxExpansions) {
-					logger.debug("Skipping for token [{}]", initialToken);
+//					logger.debug("Skipping for token [{}]", initialToken);
 					break;
 				}
 				StringBuilder greeklishWord = new StringBuilder(bufferSize);
@@ -207,7 +207,7 @@ public class GreeklishGenerator {
 				for (String convertString : Arrays.copyOfRange(convertStrings,
 						1, convertStrings.length)) {
 					if (perWordGreeklish.size() >= maxExpansions) {
-						logger.debug("Skipping for token [{}]", initialToken);
+//						logger.debug("Skipping for token [{}]", initialToken);
 						break;
 					}
 					StringBuilder newToken = new StringBuilder(atoken);
